@@ -65,6 +65,13 @@ def C(xd):#计算信道容量
     for i in range (B.shape[0]):
         a=a+2**B[i]
     C=np.log2(a)
+    b=np.array([0.0]*xd.shape[1])
+    a=np.array([0.0]*xd.shape[0])    
+    for i in range (b.shape[0]):
+        b[i]=2**(B[i]-C)
+    a=np.linalg.solve(xd,b)
+    if a.min()<0:
+        c={'错误 C 不存在'}
     return C
 
     
