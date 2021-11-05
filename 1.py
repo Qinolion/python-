@@ -71,11 +71,10 @@ def C(xd):#计算信道容量
         b[i]=2**(B[i]-C)
     a=np.linalg.solve(xd,b)
     if a.min()<0:
-        c={'错误 C 不存在'}
+        C={'错误 C 不存在'}
     return C
 
     
-
 
 
 #自定义 信源 信道矩阵
